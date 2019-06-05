@@ -25,3 +25,7 @@ add_executable(demo ${DIR_SRCS})
 
 # Link libs
 target_link_libraries(demo ${EXTRA_LIBS})
+
+# Install path
+install(TARGETS demo DESTINATION bin)
+install(FILES "${PROJECT_BINARY_DIR}/config.h" DESTINATION include)
