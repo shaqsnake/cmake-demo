@@ -1,6 +1,6 @@
 const double eps = 1e-6;
 
-double sqrt(double x) {
+double squareRoot(double x) {
     double l = 0, r = x;
     while (r - l > eps) {
         double mid = (l + r) / 2;
