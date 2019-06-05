@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "MathFunc.hpp"
+#include "math/MathFunc.hpp"
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
