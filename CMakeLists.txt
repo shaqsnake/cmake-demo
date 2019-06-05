@@ -56,3 +56,10 @@ endmacro (do_test)
 do_test(2 "is 1.41421")
 do_test(4 "is 2")
 do_test(8 "is 2.82843")
+
+# Build a CPark installer
+include(InstallRequiredSystemLibraries)
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+set(CPACK_PACKAGE_VERSION_MAJOR "${Demo_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${Demo_VERSION_MINOR}")
+include(CPack)

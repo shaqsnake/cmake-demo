@@ -44,3 +44,9 @@ config.h
 install_manifest.txt
 Testing/
 CTestTestfile.cmake
+
+# cpack
+CPackConfig.cmake
+CPackSourceConfig.cmake
+_CPack_Packages/
+Demo-*
