@@ -3,6 +3,14 @@ cmake_minimum_required (VERSION 2.6)
 # Project info
 project(Demo)
 
+# Version
+set (Demo_VERSION_MAJOR 0)
+set (Demo_VERSION_MINOR 1)
+
+# Check func exists
+include(${CMAKE_ROOT}/Modules/CheckFunctionExists.cmake)
+check_function_exists(sqrt HAVE_SQRT)
+
 # Add config file
 configure_file(
     "${PROJECT_SOURCE_DIR}/config.h.in"
