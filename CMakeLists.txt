@@ -29,3 +29,22 @@ target_link_libraries(demo ${EXTRA_LIBS})
 # Install path
 install(TARGETS demo DESTINATION bin)
 install(FILES "${PROJECT_BINARY_DIR}/config.h" DESTINATION include)
+
+# Test
+enable_testing()
+
+add_test(test_run demo 2)
+
+add_test(test_usage demo)
+set_tests_properties(test_usage 
+    PROPERTIES PASS_REGULAR_EXPRESSION ".* number")
+
+macro (do_test arg result)
+    add_test(test_${arg} demo ${arg})
+    set_tests_properties(test_${arg} 
+        PROPERTIES PASS_REGULAR_EXPRESSION ${result})
+endmacro (do_test)
+
+do_test(2 "is 1.41421")
+do_test(4 "is 2")
+do_test(8 "is 2.82843")
